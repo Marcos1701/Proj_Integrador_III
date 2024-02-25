@@ -102,10 +102,6 @@ sequenceDiagram
 ```
 
 ```mermaid
----
-title: SwapTool 
----
-
 erDiagram
     us[USERS] {
         string id PK "uuid"
