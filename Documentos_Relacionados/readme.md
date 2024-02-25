@@ -63,3 +63,41 @@
 - **Diagrama de Classes**: Mostra as principais classes da aplicação e seus relacionamentos, fornecendo uma visão geral da estrutura do sistema.
 
 - **Diagrama de Sequência**: Ilustra como as mensagens são trocadas entre os objetos em uma sequência específica de operações, ajudando a entender o fluxo de atividades em um caso de uso.
+
+
+```mermaindjs
+
+sequenceDiagram
+    Actor p as Paulo
+    participant s as SwapTool
+    Actor a as Ana
+    a-->>s: Cadastra uma ferramenta para troca
+    p-->>s: Cadastra uma ferramenta para troca
+    p->>+s: Buscar Ferramentas
+    s->>p: Apresenta Ferramenta de Ana
+    p->>s: Faz uma oferta pela ferramenta de ana
+    s->>-a: Notifica sobre uma nova oferta
+    loop troca de mensagens
+        p-->>+a: Envia uma mensagem explicando por que precisa da ferramenta
+        a-->>-p: ana responde paulo
+    end
+    alt aceita a troca
+        a->>+s: Aceita a troca
+        s-->>s: Indisponibiliza a ferramenta de ambos para outros usuarios
+        s->>-p: Notifica Paulo sobre a decisão de Ana
+    else rejeita a troca
+        a->>s: Rejeita a troca
+        s->>p: Notifica Paulo sobre a decisão de Ana
+    else propor outra troca
+        a-->>s: Ana decide querer outra ferramenta disponivel de Paulo
+        alt aceita nova proposta
+            p->>s: Aceita a troca
+            s-->>s: Indisponibiliza a ferramenta de ambos para outros usuarios
+            s->>a: Notifica sobre a decisão de Paulo
+        else
+        p->>s: Rejeita a proposta
+        s->>a: Notifica sobre a decisão de Paulo
+        end
+    end
+
+```
