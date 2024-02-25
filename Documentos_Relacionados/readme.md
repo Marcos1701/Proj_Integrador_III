@@ -1,10 +1,11 @@
-# TrocaFerramentas
+# SwapTool: Ferramentas novas, projetos novos!
 
 ## Descrição
 
-      TrocaFerramentas é como um mercado de trocas, mas para ferramentas de trabalho! Conecta profissionais 
+      SwapTool funciona como um mercado de trocas, mas para ferramentas de trabalho! Conecta profissionais 
       como pedreiros, eletricistas, carpinteiros e outros, para que possam trocar ou doar suas ferramentas entre si.
-      É uma forma inteligente de economizar dinheiro e recursos, ajudar uns aos outros e reduzir o desperdício.
+      É uma forma inteligente de economizar dinheiro e recursos, ajudar uns aos outros, reduzir o desperdício e incentivar a
+      reutilização de ferramentas de trabalho, antes inutilizadas.
 
 ### Benefícios:
 
@@ -18,31 +19,31 @@
 
 ### Casos de Uso:
 
-1. **Troca de Martelo por Furadeira**:
-   - **Descrição**: Pedro, um pedreiro, precisa de uma furadeira elétrica para perfurações específicas em um projeto de construção. Ele visualiza o anúncio de Ana, outra usuária que possui uma furadeira elétrica disponível para troca por um martelo de pedreiro. Pedro envia uma solicitação a Ana, oferecendo seu martelo em troca da furadeira de Ana.
-   - **Ator Principal**: Pedro (Pedreiro)
+1. **Troca de Furadeira por Maquita**:
+   - **Descrição**: Paulo, um pedreiro, precisa de uma maquita para realizar cortes mais precisos em seu trabalho. Ele visualiza o anúncio de Ana, outra usuária que possui uma maquita disponível para troca por uma furadeira. Paulo tem uma furadeira que não utiliza com frequência e decide enviar uma solicitação a Ana, oferecendo sua furadeira em troca da maquita.
+   - **Ator Principal**: Paulo (Pedreiro)
    - **Fluxo Principal**:
-     1. Pedro busca pela furadeira elétrica de Ana na lista de ferramentas disponíveis.
-     2. Ele envia uma solicitação a Ana, oferecendo seu martelo em troca da furadeira elétrica.
-     3. Pedro escreve uma mensagem explicando por que precisa da furadeira.
+     1. Paulo busca pela maquita de Ana na lista de ferramentas disponíveis.
+     2. Ele envia uma solicitação a Ana, oferecendo sua furadeira em troca da maquita.
+     3. Paulo escreve uma mensagem explicando por que precisa da maquita.
    - **Fluxo Alternativo**: Ana pode aceitar, rejeitar ou propor uma troca diferente.
 
-2. **Troca de Chave de Fenda por Nível a Laser**:
-   - **Descrição**: Maria, uma eletricista, tem uma chave de fenda em boas condições, mas precisa de um nível a laser para medições mais precisas em instalações elétricas. Ela visualiza o anúncio de José, outro usuário que possui um nível a laser disponível para troca por uma chave de fenda. Maria envia uma solicitação a José, oferecendo sua chave de fenda em troca do nível a laser de José.
+2. **Troca de Martelete por Serra Circular**:
+   - **Descrição**: Maria, uma eletricista, possui um martelete que não utiliza com frequência e precisa de uma serra circular para realizar cortes em um projeto específico. Ela visualiza o anúncio de José, outro usuário que possui uma serra circular disponível para troca por um martelete. Maria envia uma solicitação a José, oferecendo seu martelete em troca da serra circular de José.
    - **Ator Principal**: Maria (Eletricista)
    - **Fluxo Principal**:
-     1. Maria busca pelo nível a laser de José na lista de ferramentas disponíveis.
-     2. Ela envia uma solicitação a José, oferecendo sua chave de fenda em troca do nível a laser.
-     3. Maria escreve uma mensagem explicando por que precisa do nível a laser.
+     1. Maria busca pela serra circular de José na lista de ferramentas disponíveis.
+     2. Ela envia uma solicitação a José, oferecendo seu martelete em troca da serra circular.
+     3. Maria escreve uma mensagem explicando por que precisa da serra circular.
    - **Fluxo Alternativo**: José pode aceitar, rejeitar ou propor uma troca diferente.
 
-3. **Troca de Serra Circular por Serra Tico-Tico**:
-   - **Descrição**: Carlos, um marceneiro, possui uma serra circular em bom estado, mas precisa de uma serra tico-tico para cortes mais delicados em seus projetos. Ele visualiza o anúncio de Joana, outra usuária que possui uma serra tico-tico disponível para troca por uma serra circular. Carlos envia uma solicitação a Joana, oferecendo sua serra circular em troca da serra tico-tico de Joana.
+3. **Troca de Serra Tico-Tico por Esmerilhadeira**:
+   - **Descrição**: Carlos, um marceneiro, tem uma serra tico-tico em boas condições, mas precisa de uma esmerilhadeira para realizar cortes mais precisos em metal. Ele visualiza o anúncio de Joana, outra usuária que possui uma esmerilhadeira disponível para troca por uma serra tico-tico. Carlos envia uma solicitação a Joana, oferecendo sua serra tico-tico em troca da esmerilhadeira de Joana.
    - **Ator Principal**: Carlos (Marceneiro)
    - **Fluxo Principal**:
-     1. Carlos busca pela serra tico-tico de Joana na lista de ferramentas disponíveis.
-     2. Ele envia uma solicitação a Joana, oferecendo sua serra circular em troca da serra tico-tico.
-     3. Carlos escreve uma mensagem explicando por que precisa da serra tico-tico.
+     1. Carlos busca pela esmerilhadeira de Joana na lista de ferramentas disponíveis.
+     2. Ele envia uma solicitação a Joana, oferecendo sua serra tico-tico em troca da esmerilhadeira.
+     3. Carlos escreve uma mensagem explicando por que precisa da esmerilhadeira.
    - **Fluxo Alternativo**: Joana pode aceitar, rejeitar ou propor uma troca diferente.
 
 4. **Doação de Ferramentas para Iniciantes**:
