@@ -100,3 +100,54 @@ sequenceDiagram
     end
 
 ```
+
+```mermaid
+---
+title: SwapTool 
+---
+
+erDiagram
+    us[USERS] {
+        string id PK "uuid"
+        string name
+        string email UK
+        string password
+        int age
+        string phone
+    }
+
+    t[TOOLS] {
+        string id PK "uuid"
+        string description
+        bool is_avaliable
+        bool is_donation
+        string[] photos
+        string user_id FK
+        string category_tools_code FK
+    }
+
+    ct[CATEGORY_TOOLS] {
+        string code PK "não auto incrementavel" 
+        string name
+    }
+
+    s[SWAPS] {
+        string id
+        string user_one_id
+        string user_two_id
+        string item_alvo_id
+    }
+
+    it[ITEMS_PROPOSTOS] {
+        string id
+        string tool_id FK
+        string swap_id FK
+
+    }
+
+
+
+    us ||--o{ t : ""
+    ct ||--o{ t : ""
+    us ||--o{ s : ""
+```
