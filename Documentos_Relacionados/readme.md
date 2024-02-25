@@ -17,7 +17,7 @@
 
 - **Construa Relacionamentos**: Conheça outros profissionais da sua área e construa uma comunidade de apoio mútuo.
 
-### Casos de Uso:
+### Exemplos de Uso:
 
 1. **Troca de Furadeira por Maquita**:
    - **Descrição**: Paulo, um pedreiro, precisa de uma maquita para realizar cortes mais precisos em seu trabalho. Ele visualiza o anúncio de Ana, outra usuária que possui uma maquita disponível para troca por uma furadeira. Paulo tem uma furadeira que não utiliza com frequência e decide enviar uma solicitação a Ana, oferecendo sua furadeira em troca da maquita.
@@ -47,10 +47,10 @@
    - **Fluxo Alternativo**: Joana pode aceitar, rejeitar ou propor uma troca diferente.
 
 4. **Doação de Ferramentas para Iniciantes**:
-   - **Descrição**: Luís, um carpinteiro experiente, tem algumas ferramentas extras que ele não precisa mais. Ele decide doá-las para ajudar iniciantes na área a começarem suas práticas. Ele publica um anúncio de doação na TrocaFerramentas, listando as ferramentas disponíveis.
+   - **Descrição**: Luís, um carpinteiro experiente, tem algumas ferramentas extras que ele não precisa mais. Ele decide doá-las para ajudar iniciantes na área a começarem suas práticas. Ele publica um anúncio de doação na SwapTool, listando as ferramentas disponíveis.
    - **Ator Principal**: Luís (Carpinteiro)
    - **Fluxo Principal**:
-     1. Luís cria um anúncio de doação na TrocaFerramentas, listando as ferramentas disponíveis.
+     1. Luís cria um anúncio de doação na SwapTool, listando as ferramentas disponíveis.
      2. Um iniciante interessado em começar na carpintaria visualiza o anúncio de Luís e envia uma solicitação para receber as ferramentas.
      3. Luís recebe a solicitação, avalia o perfil do solicitante e decide aceitar.
      4. Eles combinam um local para a entrega das ferramentas.
@@ -58,7 +58,8 @@
 
 ### Diagramas Relacionados:
 
-- **Diagrama de Classes**: Pode representar as classes principais da aplicação, como Usuário, Ferramenta, Troca, etc., e seus relacionamentos.
-- **Diagrama de Personas**: Permite criar perfis fictícios de usuários com diferentes necessidades e objetivos para melhor entender suas interações com a aplicação.
+- **Diagrama de Casos de Uso**: Apresenta as interações entre os usuários e o sistema, destacando os diferentes casos de uso da aplicação.
 
-TrocaFerramentas é uma forma inteligente e sustentável de compartilhar ferramentas, economizar dinheiro e ajudar a comunidade de profissionais em suas atividades diárias.
+- **Diagrama de Classes**: Mostra as principais classes da aplicação e seus relacionamentos, fornecendo uma visão geral da estrutura do sistema.
+
+- **Diagrama de Sequência**: Ilustra como as mensagens são trocadas entre os objetos em uma sequência específica de operações, ajudando a entender o fluxo de atividades em um caso de uso.
