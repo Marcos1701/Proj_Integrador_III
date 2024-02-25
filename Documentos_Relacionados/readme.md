@@ -65,8 +65,7 @@
 - **Diagrama de Sequência**: Ilustra como as mensagens são trocadas entre os objetos em uma sequência específica de operações, ajudando a entender o fluxo de atividades em um caso de uso.
 
 
-```mermaind
-
+```mermaid
 sequenceDiagram
     Actor p as Paulo
     participant s as SwapTool
