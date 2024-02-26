@@ -152,6 +152,6 @@ erDiagram
     ANUNCIO ||--|{ FERRAMENTA : ""
     CATEGORIA_FERRAMENTA ||--o{ FERRAMENTA : ""
     OFERTA ||--|{ FERRAMENTA_OFERECIDA : ""
-    ANUNCIO ||--|{ OFERTA : ""
+    ANUNCIO ||--o{ OFERTA : ""
     FERRAMENTA ||--o{ FERRAMENTA_OFERECIDA : "" 
 ```
