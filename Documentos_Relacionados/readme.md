@@ -103,7 +103,7 @@ sequenceDiagram
 
 ```mermaid
 erDiagram
-    USERS {
+    USUARIO {
         string id PK "uuid"
         string name
         string email UK
@@ -112,36 +112,46 @@ erDiagram
         string phone
     }
 
-    TOOLS {
+    FERRAMENTA {
         string id PK "uuid"
         string description
-        bool is_avaliable
-        bool is_donation
+        bool disponivel
         string[] photos
-        string user_id FK
-        string category_tools_code FK
+        string anuncio_id FK
+        string codigo_categoria FK
     }
 
-    CATEGORY_TOOLS {
+    CATEGORIA_FERRAMENTA {
         string code PK "não auto incrementavel" 
         string name
     }
 
-    SWAPS {
+    OFERTA {
         string id
-        string user_one_id
-        string user_two_id
-        string item_alvo_id
+        string anuncio_id FK
     }
 
-    ITEMS_PROPOSTOS {
+
+    FERRAMENTA_OFERECIDA {
         string id
-        string tool_id FK
-        string swap_id FK
+        string troca_id FK
+        string ferramenta_id FK
 
     }
 
-    USERS ||--o{ TOOLS : ""
-    CATEGORY_TOOLS ||--o{ SWAPS : ""
-    USERS ||--o{ TOOLS : ""
+    ANUNCIO {
+        string id PK
+        string descricao
+        bool disponivel
+        bool doacao
+        string user_id FK
+    }
+
+    USUARIO ||--O{ FERRAMENTA : ""
+    USUARIO ||--o{ ANUNCIO : ""
+    ANUNCIO ||--|{ FERRAMENTA : ""
+    CATEGORIA_FERRAMENTA ||--o{ FERRAMENTA : ""
+    OFERTA ||--|{ FERRAMENTA_OFERECIDA : ""
+    ANUNCIO ||--|{ OFERTA : ""
+    FERRAMENTA ||--o{ FERRAMENTA_OFERECIDA : "" 
 ```
