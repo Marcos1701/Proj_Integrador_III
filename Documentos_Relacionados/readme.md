@@ -109,33 +109,56 @@ erDiagram
         string email UK
         string password
         int age
-        string phone
+        string phone UK
+
+        date created_at
+        date updated_at
+    }
+
+    CHAT {
+        string anuncio_id PK,FK
+        string usuario_id PK,FK
+
+        bool encerrado
+        string key_decript UK
+
+    }
+
+    MENSAGEM {
+        string id PK
+        string mensagem
+        string chat_id FK
+        string enviado_por FK
+        date created_at
     }
 
     FERRAMENTA {
         string id PK "uuid"
-        string description
+        string descricao
         bool disponivel
-        string[] photos
+        string[] foto
         string anuncio_id FK
         string codigo_categoria FK
+
+        date created_at
+        date updated_at
     }
 
     CATEGORIA_FERRAMENTA {
-        string code PK "não auto incrementavel" 
+        string code PK "não auto incrementavel"
         string name
     }
 
     OFERTA {
         string id
         string anuncio_id FK
+        string usuario_ofertante_id FK
     }
 
 
     FERRAMENTA_OFERECIDA {
-        string id
-        string troca_id FK
-        string ferramenta_id FK
+        string oferta_id PK,FK
+        string ferramenta_id PK,FK
 
     }
 
@@ -145,13 +168,21 @@ erDiagram
         bool disponivel
         bool doacao
         string user_id FK
+        date created_at
+        date updated_at
     }
 
-    USUARIO ||--O{ FERRAMENTA : ""
+    USUARIO ||--o{ CHAT : ""
+    USUARIO ||--o{ MENSAGEM : ""
+    ANUNCIO ||--o{ CHAT: ""
+    CHAT ||--o{ MENSAGEM : ""
+
+    USUARIO ||--o{ OFERTA : ""
+    USUARIO ||--o{ FERRAMENTA : ""
     USUARIO ||--o{ ANUNCIO : ""
-    ANUNCIO ||--|{ FERRAMENTA : ""
+    ANUNCIO |o--|{ FERRAMENTA : ""
     CATEGORIA_FERRAMENTA ||--o{ FERRAMENTA : ""
     OFERTA ||--|{ FERRAMENTA_OFERECIDA : ""
     ANUNCIO ||--o{ OFERTA : ""
-    FERRAMENTA ||--o{ FERRAMENTA_OFERECIDA : "" 
+    FERRAMENTA ||--o{ FERRAMENTA_OFERECIDA : ""
 ```
