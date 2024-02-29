@@ -12,7 +12,7 @@ outros e compartilhar recursos de maneira eficiente.
 
 ## **:busts_in_silhouette: - Membros da equipe:**
 
-- <a style="color: orange;" href="www.github.com/Marcos1701" >Marcos Neiva - **Lindo demais**</a>
-- <a style="color: red;" href="www.github.com/RenanLira-Aluno">Renan Lira - **Auto Proclamado Rei do Back-end**</a>
-- <a style="color: green;" href="www.github.com/tpessoa10">Thiago Pessoa - **Usuário de Java**</a>
+- <a href="https://github.com/Marcos1701">Marcos Neiva - **Lindo demais**</a>
+- <a href="https://github.com/RenanLira-Aluno">Renan Lira - **Auto Proclamado Rei do Back-end**</a>
+- <a href="https://github.com/tpessoa10">Thiago Pessoa - **Usuário de Java**</a>
 - <a href="https://youtu.be/VVraM-92Bhw?si=BRXIqlmTVq2qrfx7">Roniel Days - (～￣▽￣)～  (Não clique)</a>
