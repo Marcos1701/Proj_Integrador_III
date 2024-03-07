@@ -76,9 +76,11 @@ sequenceDiagram
     s->>p: Apresenta Ferramenta de Ana
     p->>s: Faz uma oferta pela ferramenta de ana
     s->>-a: Notifica sobre uma nova oferta
-    loop troca de mensagens
-        p-->>+a: Envia uma mensagem explicando por que precisa da ferramenta
-        a-->>-p: ana responde paulo
+    s-->>a: Apresenta formas de Entrar em Contato
+    s-->>p: Apresenta formas de Entrar em Contato
+    loop descidindo
+        p-->>+a: Paulo entra em contato com Ana
+        a-->>-p: Ana entra em contato com Paulo
     end
     alt aceita a troca
         a->>+s: Aceita a troca
@@ -98,7 +100,6 @@ sequenceDiagram
         s->>a: Notifica sobre a decisão de Paulo
         end
     end
-
 ```
 
 ```mermaid
@@ -115,21 +116,16 @@ erDiagram
         date updated_at
     }
 
-    CHAT {
-        string anuncio_id PK,FK
-        string usuario_id PK,FK
+    CONTATO_EXTERNO {
+        string tipo_contato FK
+        string contato
 
-        bool encerrado
-        string key_decript UK
-
+        string user_id FK
     }
 
-    MENSAGEM {
-        string id PK
-        string mensagem
-        string chat_id FK
-        string enviado_por FK
-        date created_at
+    TIPO_CONTATO {
+        string nome PK
+        string regex_validacao
     }
 
     FERRAMENTA {
@@ -172,10 +168,9 @@ erDiagram
         date updated_at
     }
 
-    USUARIO ||--o{ CHAT : ""
-    USUARIO ||--o{ MENSAGEM : ""
-    ANUNCIO ||--o{ CHAT: ""
-    CHAT ||--o{ MENSAGEM : ""
+
+    USUARIO ||--|{ CONTATO_EXTERNO : ""
+    TIPO_CONTATO ||--o{ CONTATO_EXTERNO : ""
 
     USUARIO ||--o{ OFERTA : ""
     USUARIO ||--o{ FERRAMENTA : ""
