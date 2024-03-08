@@ -103,6 +103,35 @@ sequenceDiagram
 ```
 
 ```mermaid
+sequenceDiagram
+    Actor l as Luis
+    participant s as SwapTool
+    Actor u as Usuario Iniciante
+    l-->>s: Cadastra uma ferramenta para doação
+    u->>+s: Buscar Ferramentas
+    s->>u: Apresenta Ferramenta para doação de Luís
+    u->>s: Se oferece pela ferramenta de Luís
+    s->>-l: Notifica sobre uma nova oferta
+    s-->>l: Apresenta formas de Entrar em Contato
+    s-->>u: Apresenta formas de Entrar em Contato
+
+
+    loop decisão
+        u-->>+l: Usuario Iniciante entra em contato para explicar o por que precisa da ferramenta
+        l-->>-u: luis responde este usuario
+    end
+    alt aceita 
+        l->>+s: Escolhe este usuario para doar
+        s-->>s: Indisponibiliza a ferramenta de Luís
+        s->>-u: Notifica o usuario sobre a decisão de Luís
+    else cancelada
+        l->>s: Aceita um outro usuario para doação
+        s->>u: Notifica o usuario sobre a decisão de Luís
+
+    end
+```
+
+```mermaid
 erDiagram
     USUARIO {
         string id PK "uuid"
