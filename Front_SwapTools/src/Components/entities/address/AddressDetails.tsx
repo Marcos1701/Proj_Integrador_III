@@ -103,6 +103,17 @@ async function getAddressDetails(addressId: string): Promise<AddressType> {
 	return address;
 }
 
-export const AddressDetails = (): React.ReactElement => {
-	return <div>AddressDetails</div>;
+export const AddressDetails = ({ address }: { address: AddressType }) => {
+	return (
+		<div>
+			<h1>{address.street}</h1>
+			<p>{address.number}</p>
+			<p>{address.complement}</p>
+			<p>{address.city}</p>
+			<p>{address.state}</p>
+			<p>{address.country}</p>
+			<p>{address.zipCode}</p>
+			<p>{address.updatedAt}</p>
+		</div>
+	);
 };

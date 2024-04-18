@@ -1,5 +1,6 @@
-import { Address } from "../address/AddressDetails";
-import { Photo } from "../photo/PhotoDetails";
+import { object, string } from "yup";
+import { Address, AddressDetails, AddressSchema } from "../address/AddressDetails";
+import PhotoSchema, { Photo, PhotoDetails } from "../photo/PhotoDetails";
 
 export interface User {
 	// Identificador único do usuário.
@@ -21,3 +22,31 @@ export interface User {
 	// Endereço do usuário.
 	address: Address;
 }
+
+const UserSchema = object().shape({
+	id: string().required(),
+	name: string().required(),
+	email: string().required(),
+	passwordHash: string().required(),
+	phone: string(),
+	createdAt: string().required(),
+	updatedAt: string().required(),
+	photo: PhotoSchema.required(),
+	address: AddressSchema.required(),
+});
+
+export default UserSchema;
+
+export const UserDetails = (user: User) => {
+	return (
+		<div>
+			<h1>{user.name}</h1>
+			<p>{user.email}</p>
+			<p>{user.phone}</p>
+			<p>{user.createdAt}</p>
+			<p>{user.updatedAt}</p>
+			<PhotoDetails photo={user.photo} />
+			<AddressDetails address={user.address} />
+		</div>
+	);
+};
