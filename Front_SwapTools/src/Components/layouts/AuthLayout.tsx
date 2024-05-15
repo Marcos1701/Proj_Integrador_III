@@ -12,7 +12,7 @@ export const AuthLayout = () => {
 
     const token = await user.user.getIdToken()
 
-    const result = await fetch(`http://localhost:3000/api/auth/teste-fire/${token}`, {
+    const result = await fetch(`http://localhost:3000/api/auth/login-firebase/${token}`, {
       method: 'POST',
     })
 
