@@ -1,27 +1,20 @@
-import { initializeApp } from "firebase/app";
-import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
-import { firebaseConfig } from "../../utils/firebaseConfig";
-
-const app = initializeApp(firebaseConfig)
-const provider = new GoogleAuthProvider();
+import { useAuth } from "../hooks/useAuth";
 
 export const AuthLayout = () => {
+  const auth = useAuth();
+
   const signInWithGoogle = async () => {
-    const auth = getAuth(app);
-    const user = await signInWithPopup(auth, provider);
-
-    const token = await user.user.getIdToken()
-
-    const result = await fetch(`http://localhost:3000/api/auth/login-firebase/${token}`, {
-      method: 'POST',
-    })
-
-    console.log(result)
+    try {
+      await auth.signInWithGoogle();
+    } catch (error) {
+      console.error(error);
+    }
   };
+  
 
   return (
     <div>
-      <button onClick={signInWithGoogle}>Sign in with Google</button>
+        <button onClick={signInWithGoogle}>Sign in with Google</button>
     </div>
   );
 };

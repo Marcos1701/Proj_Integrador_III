@@ -35,7 +35,6 @@ export const HeaderApp = () => {
 								</button>
 							</div>
 							{/* botoes de trocas em andamento, meus anúncios, notificações e favoritos */}
-							]
 							<div className="col-md-4">
 								<div className="row justify-content-end">
 									<div className="col-md-3">
