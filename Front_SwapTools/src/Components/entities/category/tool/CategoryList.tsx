@@ -1,5 +1,5 @@
-import { object, string, array } from "yup";
-import ToolSchema, { Tool } from "../../tool/ToolDetais";
+import { object, string } from "yup";
+import { Tool } from "../../tool/ToolDetais";
 
 export interface ToolCategory {
 	id: string;

@@ -11,10 +11,9 @@ export const AuthLayout = () => {
     }
   };
   
-
   return (
     <div>
-        <button onClick={signInWithGoogle}>Sign in with Google</button>
+      <button onClick={signInWithGoogle}>Sign in with Google</button>
     </div>
   );
 };

@@ -34,6 +34,7 @@ export const UserApi = {
         const auth = getAuth(app);
         const user = await signInWithPopup(auth, provider);
         const token = await user.user.getIdToken();
+        console.log(token);
 
         const result = await axios.post<AuthResponse>(`http://localhost:3000/api/auth/login-firebase/${token}`);
         return result.data;

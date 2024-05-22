@@ -13,7 +13,7 @@ export interface Auth {
 export const AuthContext = createContext<Auth>({
     user: null,
     loading: true,
-    signIn: async (email: string, password: string) => {},
+    signIn: async (_email: string, _password: string) => {},
     signInWithGoogle: async () => {},
     signOut: async () => {},
 });
@@ -52,7 +52,7 @@ export const AuthProvider = ( {children }: {children: ReactNode}) => {
     const signInWithGoogle = async () => {
         const {access_token, refresh_token} = await UserApi.signInWithGoogle();
         const user = await UserApi.getUser(access_token);
-        console.log(user)
+        // console.log(user)
         localStorage.setItem("access_token", access_token);
         localStorage.setItem("refresh_token", refresh_token);
         setUser(user);

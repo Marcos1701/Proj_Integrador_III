@@ -47,107 +47,110 @@ export const InsertAddressSchema = object().shape({
 
 export type InsertAddressType = InferType<typeof InsertAddressSchema>;
 
-// useState para armazenar os dados do formulário
-const [Data, setData] = useState<InsertAddressType>({
-	street: "",
-	number: "",
-	complement: "",
-	city: "",
-	state: "",
-	country: "",
-	zipCode: "",
-});
-
-// useState para armazenar o estado de validação do formulário
-const [IsValid, setIsValid] = useState(false);
-
 interface InputError {
 	input: HTMLInputElement;
 	message: string;
 }
 
-// useState para armazenar os erros de validação do formulário
-const [Errors, setErrors] = useState<InputError[]>([]);
-
-// função para salvar o endereço na API
-async function saveAddress(): Promise<void> {
-	// verifica se o formulário está válido
-	await ValidateForm();
-	// se o formulário estiver válido, salva o endereço na API
-	if (!IsValid) return;
-
-	// salva o endereço na API)
-
-	// realiza as verificações básicas e realiza a chamada à API.
-}
-
-// função para exibir os erros de validação do formulário
-const displayErrors = (errors: ValidationError[]): void => {
-	if (errors.length === 0) return;
-	// limpa os erros de validação do formulário
-	for (const error of Errors) {
-		error.input.setCustomValidity(""); // remove a mensagem de erro do campo
-	}
-	// limpa os erros de validação do formulário
-	setErrors([]);
-
-	const reportedErrors: InputError[] = [];
-
-	for (const error of errors) {
-		const input = document.querySelector(
-			`#${error.path}.input`,
-		) as HTMLInputElement;
-		reportedErrors.push({
-			input,
-			message: error.message,
-		});
-	}
-	// limpa os erros de validação do formulário
-
-	setErrors(reportedErrors);
-
-	for (const error of Errors) {
-		error.input.setCustomValidity(error.message); // informa ao navegador que o campo está inválido
-		error.input.reportValidity(); // informa ao navegador que o campo está inválido
-	}
-	setIsValid(false); // informa que o formulário não está válido
-	return;
-};
-
-async function ValidateForm(): Promise<void> {
-	// valida o formulário
-	await InsertAddressSchema.validate(Data, { abortEarly: false })
-		.then(
-			async () => setIsValid(true), // informa que o formulário está válido e pode ser enviado para a API
-		)
-		.catch((errors: ValidationError[]) => {
-			displayErrors(errors);
-		});
-	return;
-}
-
-// completar o endereço ao inserir o CEP
-const [Cep, setCep] = useState("");
-useEffect(() => {
-	async () => {
-		if (Cep.length === 8) {
-			const response = await axios.get(`https://viacep.com.br/ws/${Cep}/json/`);
-			if (response.data.erro) {
-				return;
-			}
-			setData({
-				...Data,
-				street: response.data.logradouro,
-				city: response.data.localidade,
-				state: response.data.uf,
-				country: response.data.pais,
-			});
-		}
-	};
-}, [Cep]);
-
 // componente para renderizar o formulário de endereço
 export const AddressForm = () => {
+	// useState para armazenar os dados do formulário
+	const [Data, setData] = useState<InsertAddressType>({
+		street: "",
+		number: "",
+		complement: "",
+		city: "",
+		state: "",
+		country: "",
+		zipCode: "",
+	});
+
+	// useState para armazenar o estado de validação do formulário
+	const [IsValid, setIsValid] = useState(false);
+
+		// useState para armazenar os erros de validação do formulário
+	const [Errors, setErrors] = useState<InputError[]>([]);
+
+	// completar o endereço ao inserir o CEP
+	const [Cep, setCep] = useState("");
+	useEffect(() => {
+		async () => {
+			if (Cep.length === 8) {
+				const response = await axios.get(`https://viacep.com.br/ws/${Cep}/json/`);
+				if (response.data.erro) {
+					return;
+				}
+				setData({
+					...Data,
+					street: response.data.logradouro,
+					city: response.data.localidade,
+					state: response.data.uf,
+					country: response.data.pais,
+				});
+			}
+		};
+	}, [Cep, Data]);
+
+
+	// função para exibir os erros de validação do formulário
+	const displayErrors = (errors: ValidationError[]): void => {
+		if (errors.length === 0) return;
+		// limpa os erros de validação do formulário
+		for (const error of Errors) {
+			error.input.setCustomValidity(""); // remove a mensagem de erro do campo
+		}
+		// limpa os erros de validação do formulário
+		setErrors([]);
+
+		const reportedErrors: InputError[] = [];
+
+		for (const error of errors) {
+			const input = document.querySelector(
+				`#${error.path}.input`,
+			) as HTMLInputElement;
+			reportedErrors.push({
+				input,
+				message: error.message,
+			});
+		}
+		// limpa os erros de validação do formulário
+
+		setErrors(reportedErrors);
+
+		for (const error of Errors) {
+			error.input.setCustomValidity(error.message); // informa ao navegador que o campo está inválido
+			error.input.reportValidity(); // informa ao navegador que o campo está inválido
+		}
+		setIsValid(false); // informa que o formulário não está válido
+		return;
+	};
+
+	async function ValidateForm(): Promise<void> {
+		// valida o formulário
+		await InsertAddressSchema.validate(Data, { abortEarly: false })
+			.then(
+				async () => setIsValid(true), // informa que o formulário está válido e pode ser enviado para a API
+			)
+			.catch((errors: ValidationError[]) => {
+				displayErrors(errors);
+			});
+		return;
+	}
+
+
+	// função para salvar o endereço na API
+	async function saveAddress(): Promise<void> {
+		// verifica se o formulário está válido
+		await ValidateForm();
+		// se o formulário estiver válido, salva o endereço na API
+		if (!IsValid) return;
+
+		// salva o endereço na API)
+
+		// realiza as verificações básicas e realiza a chamada à API.
+	}
+
+
 	return (
 		<form
 			onSubmit={async (e: React.FormEvent<HTMLFormElement>) => {

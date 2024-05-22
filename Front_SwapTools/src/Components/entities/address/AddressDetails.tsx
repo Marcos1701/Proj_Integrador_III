@@ -1,5 +1,5 @@
-import axios, { AxiosResponse } from "axios";
-import { object, string, number, date, InferType } from "yup";
+// import axios, { AxiosResponse } from "axios";
+import { object, string, number, InferType } from "yup";
 
 export interface GeoPoint {
 	// Latitude da localização.
@@ -72,36 +72,36 @@ export const DefaultAddressSchema = object().shape({
 
 export type DefaultAddressType = InferType<typeof DefaultAddressSchema>; // serve para inferir o tipo de um endereço padrão
 
-async function fetchAddress(addressId: string): Promise<AddressType> {
-	try {
-		// Busca o endereço no banco de dados.
+// async function fetchAddress(addressId: string): Promise<AddressType> {
+// 	try {
+// 		// Busca o endereço no banco de dados.
 
-		const response: AxiosResponse<AddressType> = await axios.get<AddressType>(
-			`/addresses/${addressId}`,
-		);
+// 		const response: AxiosResponse<AddressType> = await axios.get<AddressType>(
+// 			`/addresses/${addressId}`,
+// 		);
 
-		if (response.status !== 200) {
-			throw new Error("Failed to fetch address");
-		}
-		return response.data;
-	} catch (error) {
-		if (error instanceof Error) {
-			throw new Error(
-				`Failed to fetch address details: ${error.message}` || "Unknown error",
-			);
-		}
-		throw error;
-	}
-}
+// 		if (response.status !== 200) {
+// 			throw new Error("Failed to fetch address");
+// 		}
+// 		return response.data;
+// 	} catch (error) {
+// 		if (error instanceof Error) {
+// 			throw new Error(
+// 				`Failed to fetch address details: ${error.message}` || "Unknown error",
+// 			);
+// 		}
+// 		throw error;
+// 	}
+// }
 
-async function getAddressDetails(addressId: string): Promise<AddressType> {
-	// Busca o endereço no banco de dados.
-	const address: AddressType = await fetchAddress(addressId);
-	// Valida os dados do endereço.
-	await AddressSchema.validate(address);
-	// Retorna os dados do endereço.
-	return address;
-}
+// async function getAddressDetails(addressId: string): Promise<AddressType> {
+// 	// Busca o endereço no banco de dados.
+// 	const address: AddressType = await fetchAddress(addressId);
+// 	// Valida os dados do endereço.
+// 	await AddressSchema.validate(address);
+// 	// Retorna os dados do endereço.
+// 	return address;
+// } 
 
 export const AddressDetails = ({ address }: { address: AddressType }) => {
 	return (
