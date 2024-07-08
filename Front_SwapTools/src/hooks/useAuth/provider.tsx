@@ -1,6 +1,6 @@
 import { createContext, ReactNode, useEffect, useState } from "react";
-import { User } from "../../entities/user/UserDetails";
-import { UserApi } from "../../services/user/UserApi";
+import { User } from "../user/UserDetails";
+import { UserApi } from "../user/UserApi";
 
 export interface Auth {
     user: User | null;

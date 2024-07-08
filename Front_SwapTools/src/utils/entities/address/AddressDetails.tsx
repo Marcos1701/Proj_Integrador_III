@@ -1,5 +1,6 @@
 // import axios, { AxiosResponse } from "axios";
-import { object, string, number, InferType } from "yup";
+// import { object, string, number, InferType } from "yup";
+import {z} from "zod";
 
 export interface GeoPoint {
 	// Latitude da localização.
@@ -43,34 +44,62 @@ export interface DefaultAddress {
 	addressId: string;
 }
 
-export const AddressSchema = object().shape({
-	id: string().required(),
-	userId: string().required(),
-	street: string().required(),
-	number: string().required(),
-	complement: string(),
-	city: string().required(),
-	state: string().required(),
-	country: string().required(),
-	zipCode: string().required(),
-	createdAt: string().required(),
-	updatedAt: string().required(),
-	geoPoint: object()
-		.shape({
-			latitude: number().required(),
-			longitude: number().required(),
-		})
-		.required(),
-}); // serve para validar os dados de um endereço
+// export const AddressSchema = object().shape({
+// 	id: string().required(),
+// 	userId: string().required(),
+// 	street: string().required(),
+// 	number: string().required(),
+// 	complement: string(),
+// 	city: string().required(),
+// 	state: string().required(),
+// 	country: string().required(),
+// 	zipCode: string().required(),
+// 	createdAt: string().required(),
+// 	updatedAt: string().required(),
+// 	geoPoint: object()
+// 		.shape({
+// 			latitude: number().required(),
+// 			longitude: number().required(),
+// 		})
+// 		.required(),
+// }); // serve para validar os dados de um endereço
 
-export type AddressType = InferType<typeof AddressSchema>; // serve para inferir o tipo de um endereço
+// export type AddressType = InferType<typeof AddressSchema>; // serve para inferir o tipo de um endereço
 
-export const DefaultAddressSchema = object().shape({
-	userId: string().required(),
-	addressId: string().required(),
-}); // serve para validar os dados de um endereço padrão
+// export const DefaultAddressSchema = object().shape({
+// 	userId: string().required(),
+// 	addressId: string().required(),
+// }); // serve para validar os dados de um endereço padrão
 
-export type DefaultAddressType = InferType<typeof DefaultAddressSchema>; // serve para inferir o tipo de um endereço padrão
+// export type DefaultAddressType = InferType<typeof DefaultAddressSchema>; // serve para inferir o tipo de um endereço padrão
+
+export const AddressSchema = z.object({
+	id: z.string(),
+	userId: z.string(),
+	street: z.string(),
+	number: z.string(),
+	complement: z.string(),
+	city: z.string(),
+	state: z.string(),
+	country: z.string(),
+	zipCode: z.string(),
+	createdAt: z.string(),
+	updatedAt: z.string(),
+	geoPoint: z.object({
+		latitude: z.number(),
+		longitude: z.number(),
+	}),
+});
+
+export type AddressType = z.infer<typeof AddressSchema>;
+
+export const DefaultAddressSchema = z.object({
+	userId: z.string(),
+	addressId: z.string(),
+});
+
+export type DefaultAddressType = z.infer<typeof DefaultAddressSchema>;
+
 
 // async function fetchAddress(addressId: string): Promise<AddressType> {
 // 	try {

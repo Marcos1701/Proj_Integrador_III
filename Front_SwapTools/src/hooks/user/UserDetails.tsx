@@ -1,6 +1,8 @@
-import { object, string } from "yup";
-import { Address, AddressDetails, AddressSchema } from "../address/AddressDetails";
-import PhotoSchema, { Photo, PhotoDetails } from "../photo/PhotoDetails";
+
+import { Address, AddressDetails, AddressSchema } from "../../utils/entities/address/AddressDetails";
+import PhotoSchema, { Photo, PhotoDetails } from "../../utils/entities/photo/PhotoDetails";
+//zod
+import { z } from "zod";
 
 export interface User {
 	// Identificador único do usuário.
@@ -23,16 +25,28 @@ export interface User {
 	address: Address;
 }
 
-const UserSchema = object().shape({
-	id: string().required(),
-	name: string().required(),
-	email: string().required(),
-	passwordHash: string().required(),
-	phone: string(),
-	createdAt: string().required(),
-	updatedAt: string().required(),
-	photo: PhotoSchema.required(),
-	address: AddressSchema.required(),
+// const UserSchema = object().shape({
+// 	id: string().required(),
+// 	name: string().required(),
+// 	email: string().required(),
+// 	passwordHash: string().required(),
+// 	phone: string(),
+// 	createdAt: string().required(),
+// 	updatedAt: string().required(),
+// 	photo: PhotoSchema.required(),
+// 	address: AddressSchema.required(),
+// });
+
+const UserSchema = z.object({
+	id: z.string(),
+	name: z.string(),
+	email: z.string(),
+	passwordHash: z.string(),
+	phone: z.string(),
+	createdAt: z.string(),
+	updatedAt: z.string(),
+	photo: PhotoSchema,
+	address: AddressSchema,
 });
 
 export default UserSchema;

@@ -1,9 +1,9 @@
 
 import axios from "axios";
-import { User } from "../../entities/user/UserDetails";
+import { User } from "./UserDetails";
 import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import { initializeApp } from "firebase/app";
-import { firebaseConfig } from "../../../utils/firebaseConfig";
+import { firebaseConfig } from "../../utils/firebaseConfig";
 
 
 export interface AuthResponse {

@@ -1,4 +1,5 @@
-import { object, ObjectSchema, string } from "yup";
+// import { object, ObjectSchema, string } from "yup";
+import {z} from "zod";
 
 export interface Photo {
 	// Identificador único da foto.
@@ -13,12 +14,20 @@ export interface Photo {
 	updatedAt: string;
 }
 
-const PhotoSchema: ObjectSchema<Photo> = object({
-	id: string().required(),
-	user_id: string().required(),
-	url: string().required(),
-	createdAt: string().required(),
-	updatedAt: string().required(),
+// const PhotoSchema: ObjectSchema<Photo> = object({
+	// id: string().required(),
+	// user_id: string().required(),
+	// url: string().required(),
+	// createdAt: string().required(),
+	// updatedAt: string().required(),
+// });
+
+const PhotoSchema = z.object({
+	id: z.string(),
+	user_id: z.string(),
+	url: z.string(),
+	createdAt: z.string(),
+	updatedAt: z.string(),
 });
 
 export default PhotoSchema;
