@@ -1,68 +1,103 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+@layer base {
+    @font-face {
+        font-family: 5;
+        src: url('./assets/fonts/Poppins/Poppins-Regular.ttf');
+        font-display: swap;
+        font-weight: 400;
+        font-style: normal;
+    }
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    @font-face {
+        font-family: 6;
+        src: url('./assets/fonts/Poppins/Poppins-SemiBold.ttf');
+        font-display: swap;
+        font-weight: 600;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: 7;
+        src: url('./assets/fonts/Poppins/Poppins-Bold.ttf');
+        font-display: swap;
+        font-weight: 700;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: 8;
+        src: url('./assets/fonts/Poppins/Poppins-ExtraBold.ttf');
+        font-display: swap;
+        font-weight: 800;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: 9;
+        src: url('./assets/fonts/Poppins/Poppins-Black.ttf');
+        font-display: swap;
+        font-weight: 900;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: 10;
+        src: url('./assets/fonts/Poppins/Poppins-Medium.ttf');
+        font-display: swap;
+        font-weight: 500;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: 11;
+        src: url('./assets/fonts/Poppins/Poppins-Light.ttf');
+        font-display: swap;
+        font-weight: 300;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: 12;
+        src: url('./assets/fonts/Poppins/Poppins-Thin.ttf');
+        font-display: swap;
+        font-weight: 100;
+        font-style: normal;
+    }
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
+@layer components {
+    .font-5 {
+        font-family: 5;
+    }
 
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
+    .font-6 {
+        font-family: 6;
+    }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
+    .font-7 {
+        font-family: 7;
+    }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
+    .font-8 {
+        font-family: 8;
+    }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+    .font-9 {
+        font-family: 9;
+    }
+
+    .font-10 {
+        font-family: 10;
+    }
+
+    .font-11 {
+        font-family: 11;
+    }
+
+    .font-12 {
+        font-family: 12;
+    }
 }
