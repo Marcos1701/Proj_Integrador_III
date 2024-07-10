@@ -1,5 +1,5 @@
 import RegistrationPage from "../../pages/auth/cadastro/RegistrationPage";
-import HomePage from "../../pages/home/home";
+import HomePage from "../../pages/home/Home";
 
 export const AuthLayout = () => {
   if(window.location.pathname === '/cadastro') {
