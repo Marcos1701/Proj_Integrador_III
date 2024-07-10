@@ -1,6 +1,6 @@
 
 import React from "react";
-import Layout from "../CComponents/Layout";
+import Layout from "../components/Layout";
 
 const Home: React.FC = () => {
   return <Layout />;

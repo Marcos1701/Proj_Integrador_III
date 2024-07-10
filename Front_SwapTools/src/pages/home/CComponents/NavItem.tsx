@@ -1,10 +1,10 @@
 
 import React from "react";
 
-interface NavItemProps {
+type NavItemProps = {
   icon: string;
   text: string;
-}
+};
 
 const NavItem: React.FC<NavItemProps> = ({ icon, text }) => {
   return (
@@ -12,8 +12,8 @@ const NavItem: React.FC<NavItemProps> = ({ icon, text }) => {
       <img
         loading="lazy"
         src={icon}
-        alt={`${text} icon`}
-        className="shrink-0 w-5 border-2 border-black border-solid aspect-square stroke-[2px] stroke-black"
+        alt=""
+        className="shrink-0 mx-auto w-5 border border-black border-none aspect-square stroke-[2px] stroke-black"
       />
       <div>{text}</div>
     </div>
