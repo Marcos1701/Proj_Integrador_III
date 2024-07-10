@@ -1,5 +1,7 @@
+![NestJS](https://img.shields.io/badge/nestjs-%23E0234E.svg?style=for-the-badge&logo=nestjs&logoColor=white) 
+![Next JS](https://img.shields.io/badge/Next-black?style=for-the-badge&logo=next.js&logoColor=white)
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
 # SwapTool: Ferramentas novas, projetos novos!
-
 ## Resumo
 
 Trata-se de uma plataforma online que facilita a interação entre profissionais de diferentes áreas, 
