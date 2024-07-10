@@ -1,16 +1,14 @@
 // import './App.css'
 import { AuthProvider } from './hooks/useAuth/provider'
-import { AuthLayout } from './layouts/Auth/AuthLayout'
+import { RoutesApp } from "./routes/routes.config";
 
 function App() {
 
 
   return (
-    <>
-    <AuthProvider>
-      <AuthLayout />
-    </AuthProvider>
-    </>
+      <AuthProvider>
+        <RoutesApp />
+      </AuthProvider>
   )
 }
 
