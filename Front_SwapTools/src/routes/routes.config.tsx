@@ -11,12 +11,12 @@ import { AuthProvider } from "../hooks/useAuth/provider";
  * @return {JSX.Element} The JSX element representing the main application routes.
  */
 export function RoutesApp(): JSX.Element {
-  const navigation = useNavigation();
-  const currentPath = navigation.location?.pathname;
+  const currentPath = window.location.pathname;
 
   const validPaths = ["/cadastro", "/"];
 
   if (currentPath === undefined ||!validPaths.includes(currentPath)) {
+    console.log(currentPath);
     return <Navigate to="/" replace state={{ from: currentPath }} />;
   }
 

@@ -33,20 +33,27 @@ const ProductCard: React.FC<ProductCardProps> = ({
     }
   };
 
-  const getRequestClass = (count: number) => {
-    if (count <= 2) return "bg-sky-100";
-    if (count <= 5) return "bg-yellow-100";
-    return "bg-red-300";
+  const getRequestClass = (count: number): string => {
+    switch (true) {
+      case count <= 2:
+        return "bg-sky-100";
+      case count <= 5:
+        return "bg-yellow-100";
+      default:
+        return "bg-red-300";
+    }
   };
 
   return (
-    <div className="flex flex-col justify-center pt-px pb-5 bg-white rounded-lg border border-gray-300 border-solid">
-      <img
-        loading="lazy"
-        src={image}
-        alt={title}
-        className="w-full aspect-[1.41] max-md:max-w-[213px]"
-      />
+    <div className="flex flex-col justify-center align-middle pt-px pb-5 bg-white rounded-lg border border-gray-300 border-solid w-64">
+      <div className="flex items-center justify-center w-60 rounded-lg overflow-hidden mt-1 mx-2">
+        <img
+          loading="lazy"
+          src={image}
+          alt={title}
+          className="shrink-0 w-full border border-gray-300"
+        />
+      </div>
       <div className="flex flex-col items-start pr-11 pl-4 mt-3 max-md:pr-5 max-md:w-[214px]">
         <h3 className="text-base font-bold leading-5 text-center text-zinc-900">
           {title}
