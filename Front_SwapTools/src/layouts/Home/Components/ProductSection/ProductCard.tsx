@@ -1,5 +1,4 @@
-
-import React from "react";
+import {FC} from "react";
 
 type ProductCardProps = {
   image: string;
@@ -11,7 +10,7 @@ type ProductCardProps = {
   date: string;
 };
 
-const ProductCard: React.FC<ProductCardProps> = ({
+const ProductCard: FC<ProductCardProps> = ({
   image,
   title,
   description,

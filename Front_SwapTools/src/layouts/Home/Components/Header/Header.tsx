@@ -1,35 +1,18 @@
 
-import React, { useState } from "react";
+import {FC} from "react";
 import SearchBar from "./SearchBar";
 import NavItem from "./NavItem";
-import { Navigate, useNavigation } from "react-router-dom";
+import {useNavigate } from "react-router-dom";
 
 type HeaderProps = {
   logoSrc: string;
 };
 
-/**
- * Navigates to the registration page.
- */
+const Header: FC<HeaderProps> = ({ logoSrc }) => {
 
-
-
-const Header: React.FC<HeaderProps> = ({ logoSrc }) => {
-
-  const [navigation, setNavigation] = useState({
-    to: "/",
-    from: "/",
-    replace: true,
-    redirect: false
-  });
-
+  const navigate = useNavigate();
   const handleSignUp = () => {
-    setNavigation({
-      to: "/cadastro",
-      from: useNavigation().location?.pathname || "/",
-      replace: true,
-      redirect: true
-    })
+    navigate("/cadastro");
   };
 
   return (
@@ -39,20 +22,8 @@ const Header: React.FC<HeaderProps> = ({ logoSrc }) => {
           loading="lazy"
           src={logoSrc}
           alt="Logo"
-          className="shrink-0 my-auto w-6 border-4 border-solid aspect-[1.33] border-neutral-900 stroke-[4px] stroke-neutral-900 max-md:border-none max-sm:w-6"
+          className="shrink-0 h-6 w-6 max-md:h-5 max-md:w-5"
         />
-        <div className="flex gap-5 justify-between font-semibold">
-          <button className="justify-center px-14 py-3 text-lg leading-5 whitespace-nowrap border border-teal-100 border-solid rounded-full text-neutral-900 max-md:px-5 max-sm:text-xs max-sm:text-center max-sm:h-[31.4px] max-sm:w-[80.2px]">
-            Entrar
-          </button>
-          <button
-            className="justify-center items-start self-start px-6 py-2.5 text-base leading-5 text-white bg-yellow-500 border border-orange-500 border-solid rounded-full max-md:justify-center max-md:items-center max-md:pl-4 max-sm:justify-center max-sm:items-center max-sm:text-xs max-sm:text-center max-sm:h-[31.4px] max-sm:w-[100.6px]"
-            onClick={handleSignUp}
-          >
-            Crie sua conta
-          </button>
-        </div>
-        {navigation.redirect && <Navigate to={navigation.to} replace={navigation.replace} state={{ from: navigation.from }} />}
         <div className="flex gap-5 justify-between max-md:flex-wrap max-md:max-w-full">
           <SearchBar />
           <nav className="flex gap-5 justify-center my-auto text-sm font-semibold leading-5 text-neutral-900 max-md:flex-wrap">
@@ -73,6 +44,17 @@ const Header: React.FC<HeaderProps> = ({ logoSrc }) => {
               text="Favoritos"
             />
           </nav>
+        </div>
+        <div className="flex gap-5 justify-between font-semibold">
+          <button className="justify-center px-14 py-3 text-lg leading-5 whitespace-nowrap border border-teal-100 border-solid rounded-full text-neutral-900 max-md:px-5 max-sm:text-xs max-sm:text-center max-sm:h-[31.4px] max-sm:w-[80.2px]">
+            Entrar
+          </button>
+          <button
+            className="justify-center items-start self-start px-6 py-2.5 text-base leading-5 text-white bg-yellow-500 border border-orange-500 border-solid rounded-full max-md:justify-center max-md:items-center max-md:pl-4 max-sm:justify-center max-sm:items-center max-sm:text-xs max-sm:text-center max-sm:h-[31.4px] max-sm:w-[100.6px]"
+            onClick={handleSignUp}
+          >
+            Crie sua conta
+          </button>
         </div>
       </div>
     </header>

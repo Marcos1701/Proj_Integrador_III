@@ -1,4 +1,4 @@
-import { BrowserRouter, Navigate, Route, Routes, useNavigation } from "react-router-dom";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import RegistrationPage from "../pages/auth/cadastro/RegistrationPage";
 import HomePage from "../pages/home/Home";
 import { AuthProvider } from "../hooks/useAuth/provider";

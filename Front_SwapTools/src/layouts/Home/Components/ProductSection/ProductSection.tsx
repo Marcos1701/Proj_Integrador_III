@@ -1,5 +1,5 @@
 
-import React from "react";
+import {FC} from "react";
 import ProductCard from "./ProductCard";
 
 type ProductSectionProps = {
@@ -15,7 +15,7 @@ type ProductSectionProps = {
   }>;
 };
 
-const ProductSection: React.FC<ProductSectionProps> = ({ title, products }) => {
+const ProductSection: FC<ProductSectionProps> = ({ title, products }) => {
   return (
     <section>
       <h2 className="mt-1.5 text-2xl font-semibold leading-8 text-zinc-900 max-md:max-w-full">
