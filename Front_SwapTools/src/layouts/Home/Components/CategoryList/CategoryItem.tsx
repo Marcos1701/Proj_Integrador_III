@@ -2,8 +2,8 @@
 import React from "react";
 
 type CategoryItemProps = {
-  image: string;
-  name: string;
+  image?: string;
+  name?: string;
 };
 
 const CategoryItem: React.FC<CategoryItemProps> = ({ image, name }) => {

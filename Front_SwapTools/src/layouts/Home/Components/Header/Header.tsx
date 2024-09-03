@@ -3,6 +3,7 @@ import {FC} from "react";
 import SearchBar from "./SearchBar";
 import NavItem from "./NavItem";
 import {useNavigate } from "react-router-dom";
+import styles from './Header.module.css'
 
 type HeaderProps = {
   logoSrc: string;
@@ -16,7 +17,7 @@ const Header: FC<HeaderProps> = ({ logoSrc }) => {
   };
 
   return (
-    <header className="flex justify-center items-center px-6 py-5 w-full bg-teal-400 border-b border-gray-300 border-solid max-md:px-5 max-md:max-w-full">
+    <header className={`${styles.header} flex justify-center items-center px-3 py-5 w-full bg-teal-400 border-b border-gray-300 border-solid max-md:px-5 max-md:max-w-full`}>
       <div className="flex gap-5 justify-between w-full max-w-[1794px] max-md:flex-wrap max-md:max-w-full">
         <img
           loading="lazy"
@@ -46,7 +47,7 @@ const Header: FC<HeaderProps> = ({ logoSrc }) => {
           </nav>
         </div>
         <div className="flex gap-5 justify-between font-semibold">
-          <button className="justify-center px-14 py-3 text-lg leading-5 whitespace-nowrap border border-teal-100 border-solid rounded-full text-neutral-900 max-md:px-5 max-sm:text-xs max-sm:text-center max-sm:h-[31.4px] max-sm:w-[80.2px]">
+          <button className="justify-center px-7 py-3 text-lg leading-5 whitespace-nowrap border border-teal-100 border-solid rounded-full text-neutral-900 max-md:px-5 max-sm:text-xs max-sm:text-center max-sm:h-[31.4px] max-sm:w-[80.2px]">
             Entrar
           </button>
           <button

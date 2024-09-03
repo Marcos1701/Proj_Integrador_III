@@ -1,0 +1,12 @@
+.banner{
+    background-color: #47A8BD;
+}
+
+.banner > p{
+    font-size: 16px;
+    color: #000;
+}
+
+.banner > span{
+    
+}

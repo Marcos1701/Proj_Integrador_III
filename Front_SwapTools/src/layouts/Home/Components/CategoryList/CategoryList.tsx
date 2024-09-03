@@ -52,7 +52,7 @@ const categories = [
 
 const CategoryList: React.FC = () => {
   return (
-    <div className="flex gap-5 justify-between items-start self-center text-sm font-semibold leading-5 text-center text-zinc-900 max-md:flex max-md:overflow-auto max-md:flex-row max-md:justify-start max-md:self-start max-md:-ml-0.5 max-sm:flex max-sm:overflow-auto max-sm:flex-row max-sm:gap-1.5">
+    <div className="cursor-pointer flex gap-5 justify-between items-start self-center text-sm font-semibold leading-5 text-center text-zinc-900 max-md:flex max-md:overflow-auto max-md:flex-row max-md:justify-start max-md:self-start max-md:-ml-0.5 max-sm:flex max-sm:overflow-auto max-sm:flex-row max-sm:gap-1.5">
       {categories.map((category, index) => (
         <CategoryItem key={index} image={category.image} name={category.name} />
       ))}

@@ -52,7 +52,7 @@ const HomeLayout: React.FC = () => {
       <Banner />
       <main className="flex flex-col self-center px-5 mt-16 w-full max-w-[1680px] max-md:mt-10 max-md:max-w-full">
         <CategoryList />
-        <ProductSection
+        <ProductSection 
           title="Adicionados Recentemente"
           products={recentlyAddedProducts}
         />
