@@ -1,5 +1,5 @@
 
-import React from "react";
+import type React from "react";
 import Header from "./Components/Header/Header";
 import Banner from "./Components/Banner/Banner";
 import CategoryList from "./Components/CategoryList/CategoryList";
