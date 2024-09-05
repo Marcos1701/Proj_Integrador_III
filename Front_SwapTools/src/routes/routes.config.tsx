@@ -2,6 +2,7 @@ import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import RegistrationPage from "../pages/auth/cadastro/RegistrationPage";
 import HomePage from "../pages/home/Home";
 import { AuthProvider } from "../hooks/useAuth/provider";
+import  LoginPage  from "../pages/auth/login/LoginPage";
 
 /**
  * Renders the main application routes.
@@ -13,7 +14,7 @@ import { AuthProvider } from "../hooks/useAuth/provider";
 export function RoutesApp(): JSX.Element {
   const currentPath = window.location.pathname;
 
-  const validPaths = ["/cadastro", "/"];
+  const validPaths = ["/cadastro", "/", "/login"];
 
   if (currentPath === undefined ||!validPaths.includes(currentPath)) {
     console.log(currentPath);
@@ -26,6 +27,7 @@ export function RoutesApp(): JSX.Element {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/cadastro" element={<RegistrationPage />} />
+          <Route path="/login" element={<LoginPage/>}/>
         </Routes>
       </AuthProvider>
     </BrowserRouter>
