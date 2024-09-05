@@ -3,7 +3,7 @@ import React from "react";
 import InputField from "./InputField"
 import { useAuth } from "../../../../hooks/useAuth";
 
-const RegistrationForm: React.FC = () => {
+const RegistrationFormLogin: React.FC = () => {
 
   const auth = useAuth();
 
@@ -19,7 +19,7 @@ const RegistrationForm: React.FC = () => {
      border border-solid shadow-2xl border-zinc-500 max-md:max-w-full max-md:px-5 max-md:py-5">
       <h1 className="text-2xl max-md:max-w-full font-Poppins tracking-wide max-md:text-xl max-md:mt-0 max-md:mb-5 font-light">Seja Bem Vindo!</h1>
       <h2 className="mt-3 text-3xl font-medium max-md:max-w-full font-Poppins">
-        Cadastre-se
+        Faça o Login
       </h2>
 
       <InputField label="Email" placeholder="Insira seu Email" type="email" />
@@ -53,4 +53,4 @@ const RegistrationForm: React.FC = () => {
   );
 };
 
-export default RegistrationForm;
+export default RegistrationFormLogin;

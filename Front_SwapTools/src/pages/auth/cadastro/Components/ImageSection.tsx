@@ -8,7 +8,7 @@ const ImageSection: React.FC = () => {
         loading="lazy"
         src="https://cdn.builder.io/api/v1/image/assets/TEMP/6305cc5f1bad0cb13a8d7d916be539e2804fa63171fce792cd029821247b9363?apiKey=e659b181c3ec4be580186cc59fea34e1&"
         alt="Decorative image"
-        className="w-full shadow-sm aspect-[1.03] backdrop-blur-[25px] max-md:max-w-full"
+        className="w-full shadow-sm aspect-[1.03] backdrop-blur-[12px] rounded-[40px] max-md:max-w-full"
       />
     </section>
   );

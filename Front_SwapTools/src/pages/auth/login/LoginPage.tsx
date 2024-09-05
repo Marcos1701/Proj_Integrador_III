@@ -12,7 +12,7 @@ const LoginPage: React.FC = () => {
                     <div className="flex flex-col w-full max-md:ml-0 max-md:w-full">
                         <RegistrationFormLogin />
                     </div>
-                    <div className="flex flex-col ml-5 w-full max-md:ml-0 max-md:w-full">
+                    <div className="flex flex-col ml-5 w-full max-sm:hidden max-md:ml-0 max-md:w-full">
                         <ImageSection />
                     </div>
                 </div>
